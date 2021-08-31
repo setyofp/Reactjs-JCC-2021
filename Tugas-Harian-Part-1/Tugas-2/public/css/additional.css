@@ -1,0 +1,25 @@
+* {
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 10px;
+}
+
+section {
+	border: 1px solid grey;
+	padding: 10px;
+	margin-bottom: 30px;
+}
+
+h1 {
+	text-align: center;
+	margin: 30px 0px 10px 0px;
+	font-size: 32px;
+}
+
+td {
+	padding: 10px 0px 10px 0px;
+	min-width: 140px;
+}
