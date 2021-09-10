@@ -47,7 +47,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 500px;
 }
 
 .card {
@@ -93,4 +93,10 @@ button {
 
 button:active {
 	background-color: red;
+}
+
+.countdown {
+	display: flex;
+	justify-content: center;
+	padding: 20px 0;
 }
