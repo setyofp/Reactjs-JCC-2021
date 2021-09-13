@@ -152,6 +152,7 @@ const Tugas11 = () => {
 									value={beratTotal}
 									onChange={handleWeight}
 									min="2000"
+									required
 								/>
 							</td>
 						</tr>
