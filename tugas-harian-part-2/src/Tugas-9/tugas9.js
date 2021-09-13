@@ -33,7 +33,7 @@ const Tugas9 = () => {
 							<input type="checkbox" name="todo" id="advance-react" />
 							<label htmlFor="advance-react">Belajar ReactJS Advance</label>
 						</p>
-						<button>Send</button>
+						<button className="send">Send</button>
 					</form>
 				</div>
 			</div>

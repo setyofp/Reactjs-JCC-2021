@@ -81,7 +81,7 @@ input[type="checkbox"] {
 	margin-right: 5px;
 }
 
-button {
+.send {
 	width: 100%;
 	background-color: rgb(85, 178, 253);
 	border: none;
@@ -91,7 +91,7 @@ button {
 	margin: 5px 0px;
 }
 
-button:active {
+.send:active {
 	background-color: red;
 }
 
@@ -99,4 +99,54 @@ button:active {
 	display: flex;
 	justify-content: center;
 	padding: 20px 0;
+}
+
+.fruit {
+	display: flex;
+	justify-content: center;
+}
+
+.fruit-table {
+	width: 1000px;
+}
+
+.fruit-table h1 {
+	text-align: center;
+	padding: 10px 20px;
+	margin: 20px 0px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th,
+td {
+	text-align: left;
+	border-bottom: 0.5px solid #ccc;
+	padding: 10px 0px;
+}
+td button:last-child {
+	margin-left: 10px;
+}
+
+.form {
+	border: 0.5px solid #ccc;
+	padding: 20px;
+}
+
+.form tr {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form tr td:first-child {
+	flex-grow: 1;
+	font-weight: bold;
+}
+
+.form th,
+.form td {
+	border: none;
 }
