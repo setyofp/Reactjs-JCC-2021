@@ -104,6 +104,7 @@ input[type="checkbox"] {
 .fruit {
 	display: flex;
 	justify-content: center;
+	padding: 50px 0px;
 }
 
 .fruit-table {
@@ -113,7 +114,6 @@ input[type="checkbox"] {
 .fruit-table h1 {
 	text-align: center;
 	padding: 10px 20px;
-	margin: 20px 0px;
 }
 
 table {
