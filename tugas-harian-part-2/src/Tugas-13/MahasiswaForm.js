@@ -3,32 +3,11 @@ import axios from "axios";
 import { MahasiswaContext } from "./MahasiswaContext";
 
 const MahasiswaForm = () => {
-	const {
-		mahasiswa,
-		setMahasiswa,
-		name,
-		setName,
-		course,
-		setCourse,
-		score,
-		setScore,
-		currentId,
-		setCurrentId,
-	} = useContext(MahasiswaContext);
+	const { mahasiswa, setMahasiswa, input, setInput, currentId, setCurrentId } =
+		useContext(MahasiswaContext);
 
-	const handleName = (event) => {
-		let inputValue = event.target.value;
-		setName(inputValue);
-	};
-
-	const handleCourse = (event) => {
-		let inputValue = event.target.value;
-		setCourse(inputValue);
-	};
-
-	const handleScore = (event) => {
-		let inputValue = event.target.value;
-		setScore(inputValue);
+	const handleChange = (event) => {
+		setInput({ ...input, [event.target.name]: event.target.value });
 	};
 
 	const handleSubmit = (event) => {
@@ -38,9 +17,9 @@ const MahasiswaForm = () => {
 			// untuk create data baru
 			axios
 				.post(`http://backendexample.sanbercloud.com/api/student-scores`, {
-					name: name,
-					course: course,
-					score: score,
+					name: input.name,
+					course: input.course,
+					score: input.score,
 				})
 				.then((res) => {
 					let data = res.data;
@@ -58,19 +37,21 @@ const MahasiswaForm = () => {
 			axios
 				.put(
 					`http://backendexample.sanbercloud.com/api/student-scores/${currentId}`,
-					{ name: name, course: course, score: score }
+					{ name: input.name, course: input.course, score: input.score }
 				)
 				.then(() => {
-					let singlePeserta = mahasiswa.find((el) => el.id === currentId);
-					singlePeserta.name = name;
-					singlePeserta.course = course;
-					singlePeserta.score = score;
+					let newMahasiswa = mahasiswa.find((e) => e.id === currentId);
+					newMahasiswa.name = input.name;
+					newMahasiswa.course = input.course;
+					newMahasiswa.score = input.score;
 					setMahasiswa([...mahasiswa]);
 				});
 		}
-		setName("");
-		setCourse("");
-		setScore(0);
+		setInput({
+			name: "",
+			course: "",
+			score: 0,
+		});
 		setCurrentId(null);
 	};
 
@@ -89,8 +70,8 @@ const MahasiswaForm = () => {
 									id="name"
 									name="name"
 									type="text"
-									value={name}
-									onChange={handleName}
+									value={input.name}
+									onChange={handleChange}
 									required
 								/>
 							</td>
@@ -104,8 +85,8 @@ const MahasiswaForm = () => {
 									id="course"
 									name="course"
 									type="text"
-									value={course}
-									onChange={handleCourse}
+									value={input.course}
+									onChange={handleChange}
 									required
 								/>
 							</td>
@@ -119,8 +100,8 @@ const MahasiswaForm = () => {
 									id="score"
 									name="score"
 									type="number"
-									value={score}
-									onChange={handleScore}
+									value={input.score}
+									onChange={handleChange}
 									min="0"
 									max="100"
 									required

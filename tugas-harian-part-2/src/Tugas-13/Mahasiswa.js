@@ -3,7 +3,7 @@ import MahasiswaForm from "./MahasiswaForm";
 import MahasiswaList from "./MahasiswaList";
 import "../App.css";
 
-const Mahasiswa = () => {
+const Tugas13 = () => {
 	return (
 		<MahasiswaProvider>
 			<MahasiswaList />
@@ -12,4 +12,4 @@ const Mahasiswa = () => {
 	);
 };
 
-export default Mahasiswa;
+export default Tugas13;

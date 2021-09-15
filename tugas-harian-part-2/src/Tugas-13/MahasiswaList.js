@@ -3,14 +3,8 @@ import axios from "axios";
 import { MahasiswaContext } from "./MahasiswaContext";
 
 const MahasiswaList = () => {
-	const {
-		mahasiswa,
-		setMahasiswa,
-		setName,
-		setCourse,
-		setScore,
-		setCurrentId,
-	} = useContext(MahasiswaContext);
+	const { mahasiswa, setMahasiswa, setInput, setCurrentId } =
+		useContext(MahasiswaContext);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -19,8 +13,8 @@ const MahasiswaList = () => {
 			);
 
 			setMahasiswa(
-				result.data.map((x) => {
-					return { id: x.id, name: x.name, course: x.course, score: x.score };
+				result.data.map((e) => {
+					return { id: e.id, name: e.name, course: e.course, score: e.score };
 				})
 			);
 		};
@@ -36,9 +30,12 @@ const MahasiswaList = () => {
 			)
 			.then((res) => {
 				let data = res.data;
-				setName(data.name);
-				setCourse(data.course);
-				setScore(data.score);
+				setInput({
+					name: data.name,
+					course: data.course,
+					score: data.score,
+					id: data.id,
+				});
 				setCurrentId(data.id);
 			});
 	};
@@ -50,10 +47,10 @@ const MahasiswaList = () => {
 				`http://backendexample.sanbercloud.com/api/student-scores/${ID_STUDENT}`
 			)
 			.then(() => {
-				let newPesertaLomba = mahasiswa.filter((el) => {
+				let newMahasiswa = mahasiswa.filter((el) => {
 					return el.id !== ID_STUDENT;
 				});
-				setMahasiswa(newPesertaLomba);
+				setMahasiswa(newMahasiswa);
 			});
 	};
 
@@ -74,33 +71,33 @@ const MahasiswaList = () => {
 					</thead>
 					<tbody>
 						{mahasiswa.map((val, index) => {
-							const { id, name, course, score } = val;
 							let indeks;
-							if (score >= 80) {
+							if (val.score >= 80) {
 								indeks = "A";
-							} else if (score >= 70 && score < 80) {
+							} else if (val.score >= 70 && val.score < 80) {
 								indeks = "B";
-							} else if (score >= 60 && score < 70) {
+							} else if (val.score >= 60 && val.score < 70) {
 								indeks = "C";
-							} else if (score >= 50 && score < 60) {
+							} else if (val.score >= 50 && val.score < 60) {
 								indeks = "D";
-							} else if (score < 50) {
+							} else if (val.score < 50) {
 								indeks = "E";
 							} else {
 								indeks = "not valid";
 							}
+
 							return (
 								<tr key={index}>
 									<td>{index + 1}</td>
-									<td>{name}</td>
-									<td>{course}</td>
-									<td>{score}</td>
+									<td>{val.name}</td>
+									<td>{val.course}</td>
+									<td>{val.score}</td>
 									<td>{indeks}</td>
 									<td>
-										<button onClick={handleEdit} value={id}>
+										<button onClick={handleEdit} value={val.id}>
 											Edit
 										</button>
-										<button onClick={handleDelete} value={id}>
+										<button onClick={handleDelete} value={val.id}>
 											Delete
 										</button>
 									</td>

@@ -4,9 +4,11 @@ export const MahasiswaContext = createContext();
 
 export const MahasiswaProvider = (props) => {
 	const [mahasiswa, setMahasiswa] = useState([]);
-	const [name, setName] = useState("");
-	const [course, setCourse] = useState("");
-	const [score, setScore] = useState(null);
+	const [input, setInput] = useState({
+		name: "",
+		course: "",
+		score: 0,
+	});
 	const [currentId, setCurrentId] = useState(null);
 
 	return (
@@ -14,12 +16,8 @@ export const MahasiswaProvider = (props) => {
 			value={{
 				mahasiswa,
 				setMahasiswa,
-				name,
-				setName,
-				course,
-				setCourse,
-				score,
-				setScore,
+				input,
+				setInput,
 				currentId,
 				setCurrentId,
 			}}
