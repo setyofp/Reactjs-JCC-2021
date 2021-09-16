@@ -24,10 +24,10 @@ const Tugas10 = () => {
 		<div className="countdown">
 			<div className="countdown-show">
 				{display === true ? (
-					<>
+					<div>
 						<h1>Now At - {time.toLocaleTimeString()}</h1>
 						<h3>Countdown: {countdown}</h3>
-					</>
+					</div>
 				) : null}
 			</div>
 		</div>

@@ -150,3 +150,73 @@ td button:last-child {
 .form td {
 	border: none;
 }
+
+.to-form a {
+	text-decoration: none;
+	color: black;
+}
+
+.to-list {
+	border: none;
+	background: none;
+}
+
+.to-list a {
+	text-decoration: none;
+	color: black;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.button-theme {
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+
+.navbar.navbar-light {
+	background-color: white;
+	padding: 10px 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+.navbar.navbar-light ul {
+	display: flex;
+	justify-content: flex-start;
+	padding: 0px 20px;
+}
+
+.navbar.navbar-light ul li {
+	list-style: none;
+	margin-right: 40px;
+}
+
+.navbar.navbar-light ul li a {
+	text-decoration: none;
+	color: rgb(92, 92, 92);
+}
+
+.navbar.navbar-dark {
+	background-color: black;
+	padding: 10px 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+.navbar.navbar-dark ul {
+	display: flex;
+	justify-content: flex-start;
+	padding: 0px 20px;
+}
+
+.navbar.navbar-dark ul li {
+	list-style: none;
+	margin-right: 40px;
+}
+
+.navbar.navbar-dark ul li a {
+	text-decoration: none;
+	color: whitesmoke;
+}
