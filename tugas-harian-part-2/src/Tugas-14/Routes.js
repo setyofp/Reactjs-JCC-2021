@@ -23,24 +23,32 @@ const Routes = (props) => {
 						<Nav />
 						<Button />
 						<Switch>
-							<Route path="/tugas9" exact component={Tugas9} />
-							<Route path="/tugas10" exact component={Tugas10} />
-							<Route path="/tugas11" exact component={Tugas11} />
-							<Route path="/tugas12" exact component={Tugas12} />
-							<Route path="/tugas13" exact component={Tugas13} />
+							<Route exact path="/tugas9">
+								<Tugas9 />
+							</Route>
+							<Route exact path="/tugas10">
+								<Tugas10 />
+							</Route>
+							<Route exact path="/tugas11">
+								<Tugas11 />
+							</Route>
+							<Route exact path="/tugas12">
+								<Tugas12 />
+							</Route>
+							<Route exact path="/tugas13">
+								<Tugas13 />
+							</Route>
 
 							<DaftarMahasiswaProvider>
-								<Route
-									path="/tugas14/create"
-									exact
-									component={DaftarMahasiswaForm}
-								/>
-								<Route path="/tugas14" exact component={DaftarMahasiswaList} />
-								<Route
-									path="/tugas14/:id/edit"
-									exact
-									component={DaftarMahasiswaForm}
-								/>
+								<Route exact path="/tugas14/create">
+									<DaftarMahasiswaForm />
+								</Route>
+								<Route exact path="/tugas14">
+									<DaftarMahasiswaList />
+								</Route>
+								<Route exact path="/tugas14/:id/edit">
+									<DaftarMahasiswaForm />
+								</Route>
 							</DaftarMahasiswaProvider>
 						</Switch>
 					</ThemeProvider>
