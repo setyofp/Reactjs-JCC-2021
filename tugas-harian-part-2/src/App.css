@@ -220,3 +220,21 @@ td button:last-child {
 	text-decoration: none;
 	color: whitesmoke;
 }
+
+.fruit-15 {
+	margin-top: 20px;
+	padding: 20px 30px;
+}
+
+.fruit-15 h1 {
+	text-align: center;
+}
+
+.ant-btn.to-form-15 {
+	margin: 20px 0;
+}
+
+.nav-items a {
+	margin-right: 30px;
+	color: rgb(141, 141, 141);
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import Routes from "./Tugas-14/Routes";
+import "antd/dist/antd.css";
 // import Tugas9 from "./Tugas-9/tugas9";
 // import Tugas10 from "./Tugas-10/tugas10";
 // import Tugas11 from "./Tugas-11/tugas11";
