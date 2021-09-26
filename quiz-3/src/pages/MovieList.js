@@ -1,23 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { MovieContext } from "../context/MovieContext";
-import { Table, Tag, Space, message, Button } from "antd";
+import { Table, Space, Button } from "antd";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 
 const MovieList = () => {
 	let history = useHistory();
-	const {
-		movies,
-		setMovies,
-		input,
-		setInput,
-		currentId,
-		setCurrentId,
-		functions,
-		fetchStatus,
-		setFetchStatus,
-	} = useContext(MovieContext);
-	const { fetchData, getScore, functionDelete, functionEdit } = functions;
+	const { movies, setInput, functions, fetchStatus, setFetchStatus } =
+		useContext(MovieContext);
+	const { fetchData, functionDelete, functionEdit } = functions;
 
 	useEffect(() => {
 		if (fetchStatus === false) {
